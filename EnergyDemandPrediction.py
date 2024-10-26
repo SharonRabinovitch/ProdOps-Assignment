@@ -20,7 +20,8 @@ def preprocess_data(data):
     data = data.fillna(data.mean())
     
     # Split the data into features (X) and target (y) (for simplicity, assume weather and time are features)
-    X = data[['temperature', 'humidity', 'hour_of_day']]  # Example features
+    # Update: Assume we are now using multiple days' data
+    X = data[['temperature', 'humidity', 'hour_of_day', 'previous_demand']]  # Added previous_demand as an example feature
     y = data['demand']  # Target: energy demand
     
     return X, y
