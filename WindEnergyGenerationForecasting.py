@@ -31,6 +31,10 @@ FUNCTION CleanData(data)
         IF record IS valid THEN
             ADD record TO cleanedData
         END IF
+        IF windSpeed < 0:
+            print("Error: Wind speed cannot be negative.")
+            return 0
+        END IF
     END FOR
     RETURN cleanedData
 END FUNCTION
