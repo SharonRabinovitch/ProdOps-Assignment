@@ -63,6 +63,11 @@ def main(file_path, new_data):
 # Example usage (assuming 'historical_data.csv' contains past demand data, and 'new_data' is the input for prediction)
 if __name__ == "__main__":
     historical_data_file = 'historical_data.csv'
-    new_input_data = pd.DataFrame({'temperature': [20], 'humidity': [60], 'hour_of_day': [14]})  # Example input
+    new_input_data = pd.DataFrame({
+        'temperature': [20], 
+        'humidity': [60], 
+        'hour_of_day': [14], 
+        'previous_demand': [300]
+    })
     forecasted_demand = main(historical_data_file, new_input_data)
-    print(f"Predicted Energy Demand for Next Day: {forecasted_demand}")
+    print("Predicted Energy Demand for Next Day: {forecasted_demand}")
